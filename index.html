@@ -1,349 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>International Conference on Recent Innovations in Science and Engineering | RISE-2025</title>
-  <meta name="description" content="Join the International Conference on Recent Innovations in Science and Engineering (RISE-2025) at Government Engineering College Siwan, Bihar — November 22–23, 2025.">
-  <meta name="keywords" content="RISE 2025, GEC Siwan, Science, Engineering, Conference, Innovation, Technology, Research, International Conference">
+  <meta name="description" content="International Conference on Recent Innovations in Science and Engineering (RISE-2025) hosted by Government Engineering College Siwan.">
+  <meta name="keywords" content="RISE, GEC Siwan, Conference, Engineering, Science, Research, 2025">
+
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Reset & Base Styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', 'Segoe UI', sans-serif; }
-    body { background: #eef2f7; color: #222; line-height: 1.7; overflow-x: hidden; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     html { scroll-behavior: smooth; }
+    body { background: #eef2f7; color: #222; line-height: 1.6; }
 
-    /* Header */
+    /* HEADER */
     header {
-      background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
-      color: #fff;
-      text-align: center;
-      padding: 70px 20px 50px 20px;
-      position: relative;
+      background: linear-gradient(135deg,#0d1b2a,#1b263b,#415a77);
+      text-align: center; padding: 65px 18px 45px; color: white; position: relative;
     }
     header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: linear-gradient(to right, #ff6b6b, #feca57, #54a0ff);
+      content:""; position:absolute; left:0; bottom:0; width:100%; height:6px;
+      background:linear-gradient(90deg,#ff6b6b,#feca57,#54a0ff);
     }
-    header img.logo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: #fff;
-      padding: 5px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      object-fit: contain;
+    .logo {
+      width:110px; height:110px; border-radius:50%; object-fit:contain;
+      background: white; padding: 8px; box-shadow:0 6px 22px rgba(0,0,0,0.15);
     }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      margin-bottom: 10px;
-      color: #f1faee;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #e0e6ed;
-    }
-    header .details {
-      margin-top: 12px;
-      font-size: 1rem;
-      color: #feca57;
-      font-weight: 600;
-    }
+    header h1 { font-size: 2.2rem; margin-top: 10px; }
 
-    /* Navbar */
+    /* NAVBAR */
     nav {
-      background: #1b263b;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      background:#1b263b; position:sticky; top:0; z-index:1000;
+      box-shadow:0 2px 8px rgba(0,0,0,0.15);
     }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      transition: 0.3s;
+    .nav-wrap {
+      max-width:1200px; margin:auto;
+      padding:10px 16px;
+      display:flex; justify-content:space-between; align-items:center;
     }
-    nav ul li { margin: 10px 5px; }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 18px;
-      font-size: 1rem;
-      border-radius: 6px;
-      transition: background 0.3s, color 0.3s;
+    .nav-links { display:flex; gap:12px; list-style:none; }
+    .nav-links a {
+      color:white; padding:10px 14px; border-radius:6px;
+      text-decoration:none; font-size:0.95rem;
     }
-    nav ul li a:hover {
-      background: #415a77;
-      color: #ff6b6b;
+    .nav-links a:hover { background:#2f3a4d; color:#ff6b6b; }
+
+    .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+    .menu-toggle span { background:white; height:3px; width:26px; }
+
+    @media(max-width:768px){
+      .menu-toggle{ display:flex; }
+      .nav-links{ display:none; flex-direction:column; background:#1b263b; padding:10px; }
+      .nav-links.show{ display:flex; }
     }
 
-    /* Mobile Menu */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      padding: 10px;
+    /* SECTIONS */
+    .container { max-width:1000px; margin:40px auto; padding:0 18px; }
+    section.card {
+      background:white; padding:36px; border-radius:16px;
+      box-shadow:0 6px 24px rgba(0,0,0,0.06); margin-bottom:32px;
+      animation:fadeInUp .7s ease both;
     }
-    .menu-toggle span {
-      height: 3px;
-      width: 28px;
-      background: #fff;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: 0.3s;
+    @keyframes fadeInUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+    h2 { text-align:center; font-size:1.7rem; margin-bottom:12px; color:#0d1b2a; }
+    h2::after{
+      content:""; display:block; width:60px; height:4px;
+      margin:10px auto 0; background:#ff6b6b; border-radius:3px;
     }
 
-    /* Section Layout */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-      animation: fadeInUp 1s;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      color: #0d1b2a;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    section h2::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #ff6b6b;
-      margin: 10px auto;
-      border-radius: 2px;
-    }
-    section p, section li {
-      font-size: 1.05rem;
-      color: #333;
-    }
-    ul { margin-left: 20px; }
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    @media(max-width:850px){ .grid-2{ grid-template-columns:1fr; } }
 
-    /* Gallery */
-    .images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-      margin-top: 20px;
+    /* IMAGE CARDS */
+    .card-img{
+      border-radius:12px; overflow:hidden;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      cursor:pointer; transition:0.2s;
     }
-    .card {
-      background: #f4f6fb;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.13);
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-    .card:hover { transform: translateY(-6px); }
-    .card img { width: 100%; height: 220px; object-fit: cover; }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      left: 0; top: 0; width: 100vw; height: 100vh;
-      background: rgba(13, 27, 42, 0.85);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-    }
-    .lightbox img {
-      max-width: 90vw; max-height: 80vh;
-      border-radius: 10px;
-    }
-    .lightbox .close {
-      position: absolute; top: 30px; right: 40px;
-      font-size: 2.2rem; color: #fff;
-      cursor: pointer; background: none; border: none;
+    .card-img:hover{ transform:translateY(-6px); }
+    .card-img img{
+      width:100%; height:200px; object-fit:cover; display:block;
     }
 
-    /* Back to Top */
-    #backToTop {
-      position: fixed; bottom: 30px; right: 30px;
-      background: #415a77; color: #fff;
-      border: none; border-radius: 50%;
-      width: 48px; height: 48px; font-size: 1.7rem;
-      display: none; cursor: pointer;
+    /* LIGHTBOX */
+    #lightbox{
+      display:none; position:fixed; inset:0;
+      background:rgba(0,0,0,0.8);
+      align-items:center; justify-content:center;
+      z-index:2000;
     }
-    #backToTop:hover { background: #ff6b6b; }
+    #lightbox img{
+      max-width:90vw; max-height:80vh; border-radius:10px;
+    }
+    #lightboxClose{
+      position:absolute; top:20px; right:25px; color:white;
+      font-size:32px; cursor:pointer; background:none; border:none;
+    }
 
-    /* Footer */
-    footer {
-      background: #1b263b;
-      color: #fff;
-      text-align: center;
-      padding: 40px 10px;
-      font-size: 1rem;
-      margin-top: 60px;
-      border-radius: 0 0 12px 12px;
+    footer{
+      background:#0f2131; padding:34px 18px; color:white; text-align:center;
     }
-    footer a { color: #ff6b6b; text-decoration: underline; }
-    .footer-icons a {
-      color: #fff; margin: 0 8px; font-size: 1.3rem;
-      transition: color 0.3s;
-    }
-    .footer-icons a:hover { color: #ff6b6b; }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav ul { flex-direction: column; display: none; }
-      nav ul.show { display: flex; }
-      .menu-toggle { display: flex; }
-      header h1 { font-size: 1.5rem; }
+    #backToTop{
+      position:fixed; bottom:25px; right:25px;
+      width:48px; height:48px;
+      background:#415a77; color:white;
+      border-radius:50%; border:none;
+      display:none; cursor:pointer;
     }
+    #backToTop:hover{ background:#ff6b6b; }
   </style>
 </head>
-<body>
-  <!-- Header -->
-  <header id="home">
-    <img src="logo.png" alt="GEC Siwan Logo" class="logo">
-    <h1>International Conference on "Recent Innovations in Science and Engineering"</h1>
-    <p>(RISE-2025)</p>
-    <p>Organized by Government Engineering College Siwan, Bihar</p>
-    <p class="details"><strong>Date:</strong> December 22–23, 2025 | <strong>Venue:</strong> GEC Siwan</p>
-  </header>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
-    </div>
-    <ul id="nav-links">
+<body>
+
+<header>
+  <img src="logo.png" class="logo" alt="GEC Siwan Logo">
+  <h1>International Conference on "Recent Innovations in Science and Engineering"</h1>
+  <p>(RISE-2025)</p>
+  <p>Organized by Government Engineering College Siwan</p>
+  <p class="details"><strong>Date:</strong> December 22–23, 2025 | <strong>Venue:</strong> GEC Siwan</p>
+</header>
+
+<nav>
+  <div class="nav-wrap">
+    <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#intro">About</a></li>
       <li><a href="#themes">Themes</a></li>
-      <li><a href="#participants">Participants</a></li>
-      <li><a href="#outcomes">Outcomes</a></li>
+      <li><a href="#committee">Committee</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#dates">Dates</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Sections -->
-  <section id="intro">
-    <h2>About the Conference</h2>
-    <p>
-      The <strong>International Conference on Recent Innovations in Science and Engineering (RISE-2025)</strong> aims to provide a platform for researchers, academicians, scientists, and industry professionals to present their findings, exchange ideas, and discuss recent trends in science, engineering, and technology.
-    </p>
-    <p>
-      Organized by <strong>Government Engineering College Siwan</strong> under the Department of Science & Technology, Government of Bihar, this event will bring together multidisciplinary experts from across the world to share research and innovative practices fostering sustainable development.
-    </p>
-  </section>
+<div class="container">
 
-  <section id="themes">
-    <h2>Conference Themes</h2>
-    <ul>
-      <li>Advances in Applied Sciences, Engineering, and Technology</li>
-      <li>Innovations in Computing, Artificial Intelligence, and Data Science</li>
-      <li>Sustainable and Green Engineering Solutions</li>
-      <li>Emerging Technologies for Smart Cities and Environment</li>
-      <li>Role of Mathematics in Engineering and Applied Research</li>
-    </ul>
-  </section>
+<section id="intro" class="card">
+  <h2>About the Conference</h2>
 
-  <section id="participants">
-    <h2>Who Can Participate</h2>
-    <ul>
-      <li>Students, Research Scholars, and Academicians</li>
-      <li>Scientists, Engineers, and Innovators</li>
-      <li>Industry Professionals and Entrepreneurs</li>
-      <li>Government and NGO Representatives</li>
-      <li>Anyone interested in science, innovation, and sustainable technology</li>
-    </ul>
-  </section>
+  <div class="grid-2">
+    <div>
+      <p>The <strong>International Conference on Recent Innovations in Science and Engineering (RISE-2025)</strong> aims to bring together leading academics, researchers, industry professionals, and students to share insights and research innovations in science and engineering.</p>
 
-  <section id="outcomes">
-    <h2>Expected Outcomes</h2>
-    <ul>
-      <li>Global collaboration and knowledge exchange in science and engineering.</li>
-      <li>Exposure to new trends and innovations across multiple disciplines.</li>
-      <li>Opportunities for publication and research networking.</li>
-      <li>Enhanced participation of students and professionals in R&D.</li>
-    </ul>
-  </section>
-
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="images">
-      <div class="card"><img src="principal.jpg" alt="Conference session"></div>
-      <div class="card"><img src="students.jpg" alt="Participants group photo"></div>
-      <div class="card"><img src="speaker.jpg" alt="Paper presentation"></div>
-      <div class="card"><img src="banner.jpg" alt="RISE 2025 banner"></div>
+      <p>Organized by <strong>Government Engineering College Siwan</strong> under DSTTE (Government of Bihar), the conference promotes multidisciplinary research and collaborative advancements.</p>
     </div>
-    <div class="lightbox" id="lightbox">
-      <button class="close" id="lightboxClose"><i class="fas fa-times"></i></button>
-      <img id="lightboxImg" src="" alt="">
+
+    <div>
+      <div class="card-img">
+        <img src="college.jpg" alt="GEC Siwan Campus">
+      </div>
+      <small style="color:#555;">Government Engineering College Siwan – Campus View</small>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>Contact & Submission</h2>
-    <p><strong>Email for Abstract Submission:</strong> <a href="mailto:riseconference2025@gmail.com">riseconference2025@gmail.com</a></p>
-    <p><strong>Venue:</strong> Government Engineering College Siwan, Bihar</p>
-    <p><strong>Dates:</strong> November 22–23, 2025</p>
-    <div class="footer-icons">
-      <a href="mailto:riseconference2025@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-    </div>
-  </section>
+<section id="themes" class="card">
+  <h2>Conference Themes</h2>
+  <ul>
+    <li>Advances in Applied Sciences, Engineering, and Technology</li>
+    <li>Innovations in AI, Computing, and Data Science</li>
+    <li>Green Technology and Sustainable Engineering</li>
+    <li>Smart Cities, Sensors, and IoT</li>
+    <li>Mathematics in Engineering and Applied Sciences</li>
+  </ul>
+</section>
 
-  <!-- Back to Top -->
-  <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+<section id="committee" class="card">
+  <h2>Conference Committee</h2>
 
-  <footer>
-    <p>🌐 International Conference on "Recent Innovations in Science and Engineering" (RISE-2025)</p>
-    <p>📧 Email: <a href="mailto:riseconference2025@gmail.com">riseconference2025@gmail.com</a></p>
-    <p>Organized by Government Engineering College Siwan, Bihar</p>
-    <div class="footer-icons">
-      <a href="mailto:riseconference2025@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <p>Built with <span style="color:#ff6b6b;">❤️</span> by Rajesh</p>
-  </footer>
+  <h3>Chief Patron:</h3>
+  <p>
+    Dr. Suryakant Singh<br>
+    Principal, Government Engineering College Siwan
+  </p>
 
-  <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-    menuToggle.addEventListener("click", () => navLinks.classList.toggle("show"));
+  <h3>Convenor:</h3>
+  <p><strong>Dr. Vivek Kumar Srivastava</strong>, Department of Mathematics</p>
 
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  <h3>Coordinators:</h3>
+  <p><strong>Prof. Noorjahan</strong>, Department of Computer Science & Engineering</p>
+  <p><strong>Mr. Vir Prakash</strong>, Department of Mechanical Engineering</p>
+</section>
 
-    const cards = document.querySelectorAll(".card");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
-    const lightboxClose = document.getElementById("lightboxClose");
+<section id="gallery" class="card">
+  <h2>Gallery</h2>
+  <div class="grid-2">
 
-    cards.forEach(card => card.addEventListener("click", () => {
-      lightboxImg.src = card.querySelector("img").src;
+    <div class="card-img"><img src="studentss.jpg" alt="College Campus"></div>
+    <div class="card-img"><img src="principal.jpg" alt="Principal"></div>
+    <div class="card-img"><img src="students3.jpg" alt="Students"></div>
+    <div class="card-img"><img src="speaker.jpg" alt="Speaker"></div>
+    <div class="card-img"><img src="banner.jpg" alt="RISE Banner"></div>
+    <div class="card-img"><img src="img.jpg" alt="RISE Banner"></div>
+
+  </div>
+</section>
+
+<section id="dates" class="card">
+  <h2>Important Dates</h2>
+  <ul>
+    <li><strong>Important Dates:</strong> Updated Soon…</li>
+  </ul>
+</section>
+
+<section id="contact" class="card">
+  <h2>Contact & Submission</h2>
+
+  <p><strong>Email:</strong> <a href="mailto:riseconference2025@gmail.com">riseconference2025@gmail.com</a></p>
+
+  <p><strong>Contact:</strong> +91 9470829737</p>
+  <p><strong>Venue:</strong> Government Engineering College Siwan, Bihar</p>
+  <p><strong>Dates:</strong> December 22–23, 2025</p>
+
+  <div class="footer-icons" style="margin-top:10px;">
+    <a href="mailto:riseconference2025@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>🌐 International Conference on "Recent Innovations in Science and Engineering" (RISE-2025)</p>
+  <p>📧 <a href="mailto:riseconference2025@gmail.com">riseconference2025@gmail.com</a></p>
+  <p>Organized by Government Engineering College Siwan</p>
+  <p>Built with ❤️ by Rajesh</p>
+</footer>
+
+<button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+<!-- LIGHTBOX SCRIPT -->
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => navLinks.classList.toggle("show"));
+
+  const backBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => backBtn.style.display = window.scrollY > 300 ? "flex" : "none");
+  backBtn.addEventListener("click", () => window.scrollTo({ top:0, behavior:"smooth" }));
+
+  const images = document.querySelectorAll(".card-img img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeBtn = document.getElementById("lightboxClose");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
       lightbox.style.display = "flex";
-    }));
-    lightboxClose.addEventListener("click", () => lightbox.style.display = "none");
-    lightbox.addEventListener("click", e => { if (e.target === lightbox) lightbox.style.display = "none"; });
-  </script>
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => lightbox.style.display = "none");
+  lightbox.addEventListener("click", e => { if(e.target === lightbox) lightbox.style.display = "none"; });
+</script>
+
 </body>
 </html>
