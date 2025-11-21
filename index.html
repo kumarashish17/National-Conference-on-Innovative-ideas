@@ -35,16 +35,9 @@
       background:#1b263b; position:sticky; top:0; z-index:1000;
       box-shadow:0 2px 8px rgba(0,0,0,0.15);
     }
-    .nav-wrap {
-      max-width:1200px; margin:auto;
-      padding:10px 16px;
-      display:flex; justify-content:space-between; align-items:center;
-    }
+    .nav-wrap { max-width:1200px; margin:auto; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; }
     .nav-links { display:flex; gap:12px; list-style:none; }
-    .nav-links a {
-      color:white; padding:10px 14px; border-radius:6px;
-      text-decoration:none; font-size:0.95rem;
-    }
+    .nav-links a { color:white; padding:10px 14px; border-radius:6px; text-decoration:none; font-size:0.95rem; }
     .nav-links a:hover { background:#2f3a4d; color:#ff6b6b; }
 
     .menu-toggle { display:none; flex-direction:column; cursor:pointer; gap:5px; }
@@ -63,7 +56,6 @@
       box-shadow:0 6px 24px rgba(0,0,0,0.06); margin-bottom:32px;
       animation:fadeInUp .7s ease both;
     }
-    @keyframes fadeInUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
 
     h2 { text-align:center; font-size:1.7rem; margin-bottom:12px; color:#0d1b2a; }
     h2::after{
@@ -74,31 +66,18 @@
     .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
     @media(max-width:850px){ .grid-2{ grid-template-columns:1fr; } }
 
-    .card-img{
-      border-radius:12px; overflow:hidden;
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
-      cursor:pointer; transition:0.2s;
-    }
+    .card-img{ border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.08); cursor:pointer; transition:0.2s; }
     .card-img:hover{ transform:translateY(-6px); }
-    .card-img img{
-      width:100%; height:200px; object-fit:cover; display:block;
-    }
+    .card-img img{ width:100%; height:200px; object-fit:cover; display:block; }
 
     /* BROCHURE BUTTON */
     .brochure-btn {
-      margin-top: 20px;
-      display: inline-block;
-      background: #415a77;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
+      margin-top: 20px; display: inline-block;
+      background: #415a77; color: #fff;
+      padding: 12px 22px; border-radius: 8px;
+      text-decoration: none; font-weight: 600; transition: 0.3s;
     }
-    .brochure-btn:hover {
-      background: #ff6b6b;
-    }
+    .brochure-btn:hover { background: #ff6b6b; }
 
     /* LIGHTBOX */
     #lightbox{
@@ -107,9 +86,7 @@
       align-items:center; justify-content:center;
       z-index:2000;
     }
-    #lightbox img{
-      max-width:90vw; max-height:80vh; border-radius:10px;
-    }
+    #lightbox img{ max-width:90vw; max-height:80vh; border-radius:10px; }
     #lightboxClose{
       position:absolute; top:20px; right:25px; color:white;
       font-size:32px; cursor:pointer; background:none; border:none;
@@ -163,9 +140,24 @@
 
   <div class="grid-2">
     <div>
-      <p>The <strong>International Conference on Recent Innovations in Science and Engineering (RISE-2025)</strong> aims to bring together leading academics, researchers, industry professionals, and students to share insights and research innovations in science and engineering.</p>
+      <p>
+        The <strong>International Conference on Recent Innovations in Science and Engineering (RISE-2025)</strong> 
+        aims to bring together leading academics, researchers, industry professionals, and students to share insights 
+        and research innovations in science and engineering.
+      </p>
 
-      <p>Organized by <strong>Government Engineering College Siwan</strong> under DSTTE (Government of Bihar), the conference promotes multidisciplinary research and collaborative advancements.</p>
+      <p>
+        Organized by <strong>Government Engineering College Siwan</strong> under DSTTE (Government of Bihar), 
+        the conference promotes multidisciplinary research and collaborative advancements.
+      </p>
+
+      <p>
+        📄 <strong>About Conference Document:</strong>
+        <a href="https://docs.google.com/document/d/1Yhh1WC9rVybmMTdgQMkbOpiQlMjKj9Ry/edit?usp=drivesdk"
+           target="_blank" style="color:#415a77; font-weight:600; text-decoration:underline;">
+          Link
+        </a>
+      </p>
     </div>
 
     <div>
@@ -192,10 +184,7 @@
   <h2>Committee</h2>
 
   <h3>Convenor:</h3>
-  <p>
-    Dr. Suryakant Singh<br>
-    Principal, Government Engineering College Siwan
-  </p>
+  <p>Dr. Suryakant Singh<br> Principal, Government Engineering College Siwan</p>
 
   <h3>Organizing Secretary:</h3>
   <p><strong>Dr. Vivek Kumar Srivastava</strong>, Department of Mathematics</p>
@@ -231,14 +220,12 @@
 <section id="gallery" class="card">
   <h2>Gallery</h2>
   <div class="grid-2">
-
-    <div class="card-img"><img src="studentss.jpg" alt="College Campus"></div>
+    <div class="card-img"><img src="studentss.jpg" alt="Campus"></div>
     <div class="card-img"><img src="principal.jpg" alt="Principal"></div>
     <div class="card-img"><img src="students3.jpg" alt="Students"></div>
     <div class="card-img"><img src="speaker.jpg" alt="Speaker"></div>
     <div class="card-img"><img src="banner.jpg" alt="RISE Banner"></div>
     <div class="card-img"><img src="img.jpg" alt="Event Image"></div>
-
   </div>
 </section>
 
@@ -270,7 +257,6 @@
   <h2>Contact & Submission</h2>
 
   <p><strong>Email:</strong> <a href="mailto:riseconference2025@gmail.com">riseconference2025@gmail.com</a></p>
-
   <p><strong>Contact:</strong> +91 9470829737</p>
   <p><strong>Venue:</strong> Government Engineering College Siwan, Bihar</p>
   <p><strong>Dates:</strong> December 22–23, 2025</p>
